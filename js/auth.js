@@ -18,6 +18,9 @@ const SCOPES = "https://www.googleapis.com/auth/spreadsheets";
 
 const fecha = new Date();
 const dia = fecha.getDate();
+if (dia < 10) {
+  dia = "0" + dia;
+}
 let mes = fecha.getMonth() + 1;
 if (mes < 10) {
   mes = "0" + mes;
@@ -122,8 +125,3 @@ function handleSignoutClick() {
     document.getElementById("signout_button").style.visibility = "hidden";
   }
 }
-
-/**
- * Print the names and majors of students in a sample spreadsheet:
- * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
- */
