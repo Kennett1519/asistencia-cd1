@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asistencia CD1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="/plugins/qrCode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+
+    
+    <div class="container-sm p-3">
+      
+      <button id="authorize_button" class="btn btn-success btn-sm rounded-3 me-2 p-2" onclick="handleAuthClick()">Authorize</button>
+      <button id="signout_button" class="btn btn-danger btn-sm rounded-3 p-2" onclick="handleSignoutClick()">Sign Out</button>
+    </div>
+    
+    <input type="date" name="assist" id="assist-date" class="mt-4 ms-4">
+
+    <div id="scanner-qr" class="row justify-content-center mt-5">
+      <div class="col-sm-4 shadow p-3">
+        <h5 class="text-center">Escanear QR</h5>
+        <div class="row text-center">
+          <a id="btn-scan-qr" href="#">
+            <img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg" class="img-fluid text-center" width="175">
+          <a/>
+          <canvas hidden="" id="qr-canvas" class="img-fluid"></canvas>
+          </div>
+          <div class="row mx-5 my-3">
+          <button class="btn btn-success btn-sm rounded-3 mb-2" onclick="encenderCamara()">Encender camara</button>
+          <button class="btn btn-danger btn-sm rounded-3" onclick="cerrarCamara()">Detener camara</button>
+
+          <template id="my-template">
+            <swal-icon type="question" color="red"></swal-icon>
+            <swal-button type="confirm">
+              Aceptar
+            </swal-button>
+            <swal-button type="deny">
+              Cancelar
+            </swal-button>
+          </template>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/index.js"></script>
+
+
+
+
+
+    
+    <script async defer src="https://apis.google.com/js/api.js" id="gapi"></script>
+    <script async defer src="https://accounts.google.com/gsi/client" id="gis"></script>
+    <script async defer src="/js/auth.js"></script>
+    <script async defer src="/js/sheets.js"></script>
+
+  </body>
+</html>
