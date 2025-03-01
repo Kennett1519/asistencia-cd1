@@ -17,7 +17,7 @@ const DISCOVERY_DOC =
 const SCOPES = "https://www.googleapis.com/auth/spreadsheets";
 
 const fecha = new Date();
-const dia = fecha.getDate();
+let dia = fecha.getDate();
 if (dia < 10) {
   dia = "0" + dia;
 }
