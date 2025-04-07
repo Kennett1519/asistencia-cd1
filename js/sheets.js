@@ -9,7 +9,7 @@ async function getIdentifier() {
   let response;
   try {
     response = await gapi.client.sheets.spreadsheets.values.get({
-      spreadsheetId: "18kNwdN-xHyesm3QkVj2fDap0I415rsrWMhE9yQ-vNTs",
+      spreadsheetId: "1wX2oD76QuFmyexe0bNmFeFLtsuVOjoZmSHP9CMDSpJo",
       range: "Asistencia!D2:D",
     });
   } catch (err) {
@@ -30,7 +30,7 @@ async function getIdentifier() {
   let firstRow;
   try {
     firstRow = await gapi.client.sheets.spreadsheets.values.get({
-      spreadsheetId: "18kNwdN-xHyesm3QkVj2fDap0I415rsrWMhE9yQ-vNTs",
+      spreadsheetId: "1wX2oD76QuFmyexe0bNmFeFLtsuVOjoZmSHP9CMDSpJo",
       range: "Asistencia!1:1",
     });
   } catch (err) {
@@ -61,14 +61,14 @@ async function addAsistencia(contenido) {
   filaAEditar = identifiers.indexOf(contenido) + 2;
 
   response = await gapi.client.sheets.spreadsheets.values.update({
-    spreadsheetId: "18kNwdN-xHyesm3QkVj2fDap0I415rsrWMhE9yQ-vNTs",
+    spreadsheetId: "1wX2oD76QuFmyexe0bNmFeFLtsuVOjoZmSHP9CMDSpJo",
     range: `Asistencia!R1C${columnaAEditar}:R1C${columnaAEditar}`,
     values: [[assistDate.value]],
     valueInputOption: "USER_ENTERED",
   });
 
   response = await gapi.client.sheets.spreadsheets.values.update({
-    spreadsheetId: "18kNwdN-xHyesm3QkVj2fDap0I415rsrWMhE9yQ-vNTs",
+    spreadsheetId: "1wX2oD76QuFmyexe0bNmFeFLtsuVOjoZmSHP9CMDSpJo",
     range: `Asistencia!R${filaAEditar}C${columnaAEditar}:R${filaAEditar}C${columnaAEditar}`,
     values: [["X"]],
     valueInputOption: "USER_ENTERED",
